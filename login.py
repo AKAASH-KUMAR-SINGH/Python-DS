@@ -16,4 +16,8 @@ while True:
     if uname == username and pwd ==password:
         print('Login Sucessfull')
         break
-    
+for i in range(5):
+    for j in range(i):
+         print(j,end=' ')
+    print('\n')
+print('program complete')   
