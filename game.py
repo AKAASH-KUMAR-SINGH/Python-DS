@@ -9,13 +9,13 @@ e=Actor('alien',(WIDTH//2,200))
 c=Actor('coin',(WIDTH//2,HEIGHT-100))
 def draw():
     screen.fill('black')
-    screen
     p.draw()
     e.draw()
     c.draw()
 def player_update():
     if keyboard.left:
         p.x-=5
+        
     elif keyboard.right:
         p.x+=5
     elif keyboard.up:
@@ -23,12 +23,16 @@ def player_update():
     elif keyboard.down:
         p.y+=5
 
+    if p.x > WIDTH:
+          p.x=0
+    elif e.y > HEIGHT:
+       p.y=0
+
 
 def enemy_update():
-    e.x+=5
-    if e.x>WIDTH:
+    e.x+=2
+    if e.x > WIDTH:
         e.x=0
-
 def update():
     enemy_update()
     player_update()
