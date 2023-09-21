@@ -1,0 +1,10 @@
+opencv-contrib-python
+mediapipe
+numpy
+matplotlib
+seaborn
+pandas
+plotly
+scipy
+openpyxl
+nbformat
