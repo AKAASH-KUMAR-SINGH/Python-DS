@@ -1,11 +1,18 @@
 import streamlit as st
 
 # { BMI=weight/height^2 }
+
+# title of the project
 st.title('BMI Calculator')
 st.header("Welcome to  BMI Calculator")
+# taking input from user
 Name=st.text_input("Enter your name: ")
+# taking number input from user
+
 weight=st.number_input("Enter your Weight (kgs): ")
+
 height=st.radio('Select your Height format',('cms','meter','feet'))
+
 if(height == 'cms'):
     height=st.number_input("Enter your height: ")
     try:
@@ -28,13 +35,13 @@ else:
 if (st.button("Calculate BMI")):
     st.text(f'{Name},Your BMI index is {BMI}.')
 
-if (BMI < 16):
-    st.error('You are extermely Underweight')
-elif (BMI >= 16 and BMI < 18.5):
-    st.warning("You are Underweight")
-elif (BMI >= 25 and BMI < 25):
-    st.success('Healthy')
-elif (BMI >= 25 and BMI < 30):
-    st.warning('Overweight')
-else:
-    st.error("Extermely Overweight")
+    if (BMI < 16):
+        st.error('You are extermely Underweight')
+    elif (BMI >= 16 and BMI < 18.5):
+        st.warning("You are Underweight")
+    elif (BMI >= 18.5 and BMI < 25):
+        st.success('Healthy')
+    elif (BMI >= 25 and BMI < 30):
+        st.warning('Overweight')
+    else:
+        st.error("Extermely Overweight")
